@@ -8,9 +8,7 @@ def articles_list(request):
     ordering = '-published_at'
     queryset = Article.objects.all()
     context = {'object_list': queryset}
-
-    # используйте этот параметр для упорядочивания результатов
-    # https://docs.djangoproject.com/en/3.1/ref/models/querysets/#django.db.models.query.QuerySet.order_by
-
+    for i in queryset:
+        print(f"DD: {i.tags.all()}")
 
     return render(request, template, context)
