@@ -28,7 +28,6 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
-    @property
     def is_main(self):
         scope = self.scopes.first()
         return scope.main
